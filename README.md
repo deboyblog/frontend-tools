@@ -1,11 +1,18 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <title>frontend-tools - 为前端工程师打造一个工具集合</title> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</html>
+
 ## 基于ElectronVue + VueBlu
 
-只为身为前端狗的我打造一套专属的前端工具集合桌面端
+只为打造一套专属的前端工具集合桌面端
 
 | 进度 | 功能 | 描述 |
 |---|---|---------|
-| [x] | Px2rem | 可配置UI设计图像素(待转换像素) + 目标基准像素 如 750px宽度的设计图 640px宽度的REM方案 转换方式为 目标值(rem) =  待转换像素 * (640 / 750)  
+| [x] | Px2rem | 750px的UI图 640px的REM方案 公式 **目标值(rem) =  待转换像素 * (640 / 750)**
 
 
 目前只针对我自身需求来定制 
