@@ -1,0 +1,6 @@
+.DS_Store
+dist/
+app/dist/
+.idea/
+node_modules/
+!.gitkeep
