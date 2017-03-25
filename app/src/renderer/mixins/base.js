@@ -6,10 +6,15 @@ export default {
     return {}
   },
   computed: {
-    fullHeight () {
-      return {
-        height: window.document.body.clientHeight + 'px'
+    fullHeight: {
+      cache: false,
+      get () {
+        return {
+          height: window.document.body.clientHeight + 'px'
+        }
       }
     }
+  },
+  mounted () {
   }
 }

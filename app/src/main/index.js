@@ -14,7 +14,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     height: 800,
     width: 1024,
-    title: 'Px2Rem',
+    title: '前端工具集合',
     show: false
   })
 
