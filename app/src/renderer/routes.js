@@ -10,6 +10,11 @@ export default [
     component: require('views/Px2rem')
   },
   {
+    path: '/WebView',
+    name: 'WebView',
+    component: require('views/WebView')
+  },
+  {
     path: '*',
     redirect: '/'
   }

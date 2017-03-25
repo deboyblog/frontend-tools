@@ -1,6 +1,6 @@
 <template>
     <div>
-        just for test
+        前端工具集合
     </div>
 </template>
 <style scoped lang="less" rel="stylesheet/less">
