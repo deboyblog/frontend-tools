@@ -3,7 +3,8 @@
         <template v-for="menu in menus">
             <menus :label="menu.name">
                 <template v-for="item in menu.childs">
-                    <menu-item :icon="item.icon" :to="item.route">{{item.name}}</menu-item>
+                    <!--<menu-item :icon="item.icon" :to="item.route">{{item.name}}</menu-item>-->
+                    <menu-item :to="item.route">{{item.name}}</menu-item>
                 </template>
             </menus>
         </template>
