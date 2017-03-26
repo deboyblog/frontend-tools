@@ -15,7 +15,8 @@ function createWindow () {
     height: 800,
     width: 1024,
     title: '前端工具集合',
-    show: false
+    show: false,
+    alwaysOnTop: true
   })
 
   mainWindow.loadURL(winURL)
