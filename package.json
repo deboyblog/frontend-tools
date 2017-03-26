@@ -14,7 +14,7 @@
     "postinstall": "npm run lint:fix && cd app && npm install"
   },
   "build": {
-    "productName": "frontend-tools",
+    "productName": "前端工具集合",
     "appId": "org.deboy.frontend-tools",
     "category": "public.app-category.tools",
     "dmg": {

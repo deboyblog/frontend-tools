@@ -21,6 +21,12 @@
                 <input type="checkbox" v-model="autoAddUnit">
                 自动加单位?
               </label>
+            &nbsp;
+            &nbsp;
+            <label class="checkbox">
+                <input type="checkbox" v-model="autoAddSemicolon">
+                转化结果自动加分号?
+              </label>
         </p>
         <label class="label" v-show="autoAddUnit">请输入单位 [例如: Web端:rem 微信小程序:rpx]</label>
         <p class="control" v-show="autoAddUnit">
@@ -31,7 +37,7 @@
             <input id="px2rem_convertRst" class="input" v-model="convertRst" type="text">
         </p>
         <p class="control">
-            <button @click="copy" class="button is-info is-outlined">复制</button>
+            <button @click="copy" class="button is-info is-medium is-fullwidth is-outlined">复制</button>
         </p>
     </div>
 </template>
@@ -47,14 +53,18 @@
         uiWidth: '750',
         remWidth: '750',
         multiple: '100',
-        autoAddUnit: true
+        autoAddUnit: true,
+        autoAddSemicolon: true
       }
     },
     computed: {
       convertRst: {
         cache: false,
         get () {
-          return (this.needToConvert * parseFloat(this.uiWidth / this.remWidth) / this.multiple) + (this.autoAddUnit ? (this.unit + ';') : '')
+          let convert = this.needToConvert * parseFloat(this.uiWidth / this.remWidth) / this.multiple
+          convert += this.autoAddUnit ? this.unit : ''
+          convert += this.autoAddSemicolon ? ';' : ''
+          return convert
         }
       }
     },

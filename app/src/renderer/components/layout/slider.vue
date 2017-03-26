@@ -28,6 +28,18 @@
       return {
         menus: [
           {
+            name: '系统导航',
+            childs: [
+              {
+                icon: 'arrows',
+                name: '首页',
+                route: {
+                  name: 'Home'
+                }
+              }
+            ]
+          },
+          {
             name: '常用工具',
             childs: [
               {
@@ -59,7 +71,7 @@
             childs: [
               {
                 icon: 'arrows',
-                name: '极客学院Wiki集合',
+                name: '极客学院Wiki',
                 route: {
                   name: 'WebView',
                   query: {

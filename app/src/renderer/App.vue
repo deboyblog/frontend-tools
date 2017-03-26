@@ -5,7 +5,7 @@
                 <slider></slider>
             </div>
             <div class="column is-10">
-                <router-view></router-view>
+                <router-view class="container-warp"></router-view>
             </div>
         </div>
     </div>
@@ -20,6 +20,11 @@
     }
   }
 </script>
+<style lang="less" scoped>
+    .container-warp{
+        padding: 10px 10px 0 0;
+    }
+</style>
 <style lang="less">
     * {
         margin: 0;
