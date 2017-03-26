@@ -14,7 +14,7 @@
                 </transition>
             </div>
         </div>
-        <a class="button slider-controller" @click="showSlider = !showSlider">
+        <a class="button slider-controller" @click="toggleSlider">
           <span class="icon">
             <i class="fa" :class="{'fa-close': showSlider, 'fa-bars': !showSlider}"></i>
           </span>
@@ -25,15 +25,28 @@
   import store from 'renderer/vuex/store'
   import slider from 'renderer/components/layout/slider'
   import * as types from './vuex/mutation-types'
+  import { mapGetters, mapMutations } from 'vuex'
   export default {
     store,
     components: {
       slider
     },
-    data () {
-      return {
-        showSlider: true
+    watch: {
+      appLayout (val) {
+        window.resizeTo(val.width, val.height)
+      },
+      showSlider (val) {
+        console.log(val)
+        if (val) {
+          this.resetSetting()
+        }
       }
+    },
+    computed: {
+      ...mapGetters(['appLayout', 'showSlider'])
+    },
+    methods: {
+      ...mapMutations({'toggleSlider': types.TOGGLE_SLIDER, 'resetSetting': types.RESET_SETTINGS})
     },
     mounted () {
       window.addEventListener('resize', () => {
@@ -55,7 +68,7 @@
         position: fixed;
         bottom: 20px;
         left: 20px;
-        .icon{
+        .icon {
             margin: 0;
         }
     }

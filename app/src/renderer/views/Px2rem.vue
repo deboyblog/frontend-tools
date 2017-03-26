@@ -44,6 +44,7 @@
 <style scoped lang="less" rel="stylesheet/less">
 </style>
 <script type="text/ecmascript-6">
+  import * as types from '../vuex/mutation-types'
   export default{
     components: {},
     data () {
@@ -88,6 +89,13 @@
           }
         }
       }
+    },
+    activated () {
+      this.$store.commit(types.RE_LAYOUT, {
+        x: 380,
+        y: 700,
+        showSlider: false
+      })
     }
   }
 </script>
