@@ -2,7 +2,7 @@
     <div @keyup.enter="copy">
         <label class="label">待转换像素 [px]</label>
         <p class="control">
-            <input class="input" v-model="needToConvert" type="text">
+            <input class="input" id="px2rem_needToConvert" v-model="needToConvert" type="text">
         </p>
         <label class="label">Rem宽度标准 [px]</label>
         <p class="control">
@@ -37,7 +37,7 @@
             <input id="px2rem_convertRst" class="input" v-model="convertRst" type="text">
         </p>
         <p class="control">
-            <button @click="copy" class="button is-info is-medium is-fullwidth is-outlined">复制</button>
+            <button @click="copy" class="button is-info is-fullwidth is-outlined">复制(回车亦复制)</button>
         </p>
     </div>
 </template>
@@ -61,7 +61,7 @@
       convertRst: {
         cache: false,
         get () {
-          let convert = this.needToConvert * parseFloat(this.uiWidth / this.remWidth) / this.multiple
+          let convert = this.needToConvert * parseFloat(this.remWidth / this.uiWidth) / this.multiple
           convert += this.autoAddUnit ? this.unit : ''
           convert += this.autoAddSemicolon ? ';' : ''
           return convert
@@ -71,11 +71,18 @@
     methods: {
       copy () {
         let el = window.document.querySelector('#px2rem_convertRst') || null
+        let input = window.document.querySelector('#px2rem_needToConvert') || null
         if (el && el.select) {
           try {
             el.select()
             window.document.execCommand('copy')
             el.blur()
+            input.focus()
+            this.$notify.open({
+              content: '复制成功~',
+              icon: 'smile-o',
+              duration: 2000
+            })
           } catch (err) {
             window.alert('请按下 Ctrl/Cmd+C 复制')
           }

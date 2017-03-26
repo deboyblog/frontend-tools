@@ -31,7 +31,7 @@
             name: '系统导航',
             childs: [
               {
-                icon: 'arrows',
+                icon: 'home',
                 name: '首页',
                 route: {
                   name: 'Home'
@@ -55,7 +55,7 @@
             name: '莫忘充电',
             childs: [
               {
-                icon: 'arrows',
+                icon: 'plug',
                 name: '掘金',
                 route: {
                   name: 'WebView',
@@ -70,7 +70,7 @@
             name: '查查Wiki',
             childs: [
               {
-                icon: 'arrows',
+                icon: 'search',
                 name: '极客学院Wiki',
                 route: {
                   name: 'WebView',

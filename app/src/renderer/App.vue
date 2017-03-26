@@ -5,7 +5,9 @@
                 <slider></slider>
             </div>
             <div class="column is-10">
-                <router-view class="container-warp"></router-view>
+                <transition name ="zoomDown">
+                    <router-view class="container-warp"></router-view>
+                </transition>
             </div>
         </div>
     </div>
@@ -13,10 +15,16 @@
 <script>
   import store from 'renderer/vuex/store'
   import slider from 'renderer/components/layout/slider'
+  import * as types from './vuex/mutation-types'
   export default {
     store,
     components: {
       slider
+    },
+    mounted () {
+      window.addEventListener('resize', () => {
+        this.$store.commit(types.WINDOW_ON_RESIZE)
+      })
     }
   }
 </script>

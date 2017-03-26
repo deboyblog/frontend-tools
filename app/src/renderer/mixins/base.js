@@ -3,18 +3,14 @@
  */
 export default {
   data () {
-    return {}
-  },
-  computed: {
-    fullHeight: {
-      cache: false,
-      get () {
-        return {
-          height: window.document.body.clientHeight + 'px'
-        }
-      }
+    return {
     }
   },
-  mounted () {
+  computed: {
+    fullHeight () {
+      return {
+        height: this.$store.state.styles.fullHeight
+      }
+    }
   }
 }
