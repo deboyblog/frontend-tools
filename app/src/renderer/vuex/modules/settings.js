@@ -3,13 +3,13 @@
  */
 import * as types from '../mutation-types'
 const defaultSettings = {
-  enableCustomMode: true,
+  enableCustomMode: process.env.NODE_ENV !== 'development',
   showSlider: true,
   windowWidth: 1024,
   windowHeight: 800
 }
 const state = {
-  enableCustomMode: true,
+  enableCustomMode: process.env.NODE_ENV !== 'development',
   showSlider: true,
   windowWidth: 1024,
   windowHeight: 800

@@ -16,11 +16,11 @@
         </p>
         <label class="label">背景色</label>
         <p class="control">
-          <input class="input" type="color" v-model="setting.background" placeholder="背景色">
+          <chrome-picker v-model="background" @change-color="(res) => {background = res}"></chrome-picker>
         </p>
         <label class="label">字体颜色</label>
         <p class="control">
-          <input class="input" type="color" v-model="setting.fontColor" placeholder="字体色">
+          <chrome-picker v-model="fontColor" @change-color="(res) => {fontColor = res}"></chrome-picker>
         </p>
       </div>
       <div class="column is-7">
@@ -42,8 +42,11 @@
 </style>
 <script type="text/ecmascript-6">
   import * as types from '../vuex/mutation-types'
+  import { Chrome } from 'vue-color'
   export default{
-    components: {},
+    components: {
+      'chrome-picker': Chrome
+    },
     data () {
       return {
         onlineList: [
@@ -62,8 +65,28 @@
           width: 100,
           height: 100,
           background: '#0000ff',
-          fontColor: '#000000',
+          fontColor: '#ffffff',
           text: 'Hello'
+        },
+        background: {
+          hex: '#0000ff'
+        },
+        fontColor: {
+          hex: '#ffffff'
+        }
+      }
+    },
+    watch: {
+      background: {
+        deep: true,
+        handler (val) {
+          this.setting.background = val.hex
+        }
+      },
+      fontColor: {
+        deep: true,
+        handler (val) {
+          this.setting.fontColor = val.hex
         }
       }
     },
@@ -82,7 +105,7 @@
     activated () {
       this.$store.commit(types.RE_LAYOUT, {
         x: 800,
-        y: 800,
+        y: 900,
         showSlider: false
       })
     }

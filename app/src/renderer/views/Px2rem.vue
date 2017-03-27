@@ -46,7 +46,6 @@
 <script type="text/ecmascript-6">
   import * as types from '../vuex/mutation-types'
   export default{
-    components: {},
     data () {
       return {
         needToConvert: '',
