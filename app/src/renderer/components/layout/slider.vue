@@ -49,6 +49,13 @@
                 route: {
                   name: 'Px2rem'
                 }
+              },
+              {
+                icon: 'arrows',
+                name: '占位图',
+                route: {
+                  name: 'PlaceholderImage'
+                }
               }
             ]
           },
