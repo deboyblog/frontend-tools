@@ -8,6 +8,21 @@
 | [√] | Px2rem | 750px的UI图 640px的REM方案 1rem=100px的转换率 公式 **目标值(rem) =  待转换像素 * (640 / 750) / 转换率**
 | [√] | 自定义布局 | 通过传递x,y,showSlider来控制app的布局转换
 
+## 怎么跑起来
+```
+// 下载项目
+git clone https://github.com/deboyblog/frontend-tools.git
+
+// 安装依赖
+npm run postinstall
+
+// 开发
+npm run dev
+
+// 打包成对应平台的安装包 window上只能打包.exe mac上才能打包.dmg和.app
+npm run build
+```
+
 目前只针对我自身需求来定制 
 
 如有意见或建议 欢迎提 [issues](https://github.com/deboyblog/frontend-tools/issues/new) 
