@@ -15,7 +15,7 @@
 git clone https://github.com/deboyblog/frontend-tools.git
 
 // 安装依赖
-npm run postinstall
+npm run install
 
 // 开发
 npm run dev
