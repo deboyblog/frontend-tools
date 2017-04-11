@@ -19,11 +19,11 @@
             <i class="fa" :class="{'fa-close': showSlider, 'fa-bars': !showSlider}"></i>
           </span>
     </a>
-    <a class="button slider-controller" @click="onSetting = !onSetting">
-          <span class="icon">
-            <i class="fa" :class="{'fa-close': showSlider, 'fa-bars': !showSlider}"></i>
-          </span>
-    </a>
+    <!--<a class="button slider-controller" @click="onSetting = !onSetting">-->
+          <!--<span class="icon">-->
+            <!--<i class="fa" :class="{'fa-close': showSlider, 'fa-bars': !showSlider}"></i>-->
+          <!--</span>-->
+    <!--</a>-->
   </div>
 </template>
 <script>
